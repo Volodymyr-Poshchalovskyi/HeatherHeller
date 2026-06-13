@@ -1,0 +1,162 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import { IoMenuOutline, IoCloseOutline } from "react-icons/io5";
+import Button from "@/components/ui/Button";
+
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Experience Lab", href: "/experience-lab" },
+  { label: "Events", href: "/events" },
+  { label: "Brands & Partners", href: "/brands-partners" },
+  { label: "Press", href: "/press" },
+  { label: "Contact", href: "/contact" },
+];
+
+export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Close mobile menu when pathname changes
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
+  return (
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? "bg-background/90 backdrop-blur-md border-b border-gold/10 py-4"
+          : "bg-transparent py-6"
+      }`}
+    >
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex items-center justify-between gap-4 w-full">
+        {/* Left Side: Logo */}
+        <div className="flex-1 flex justify-start min-w-[200px] lg:min-w-[280px]">
+          <Link href="/" className="z-50 group">
+            <span className="font-serif text-lg md:text-2xl tracking-[0.2em] uppercase font-light text-white-custom group-hover:text-gold transition-colors duration-300 whitespace-nowrap block">
+              Heather Heller
+            </span>
+            <span className="block text-[8px] tracking-[0.4em] uppercase text-gold font-sans font-semibold group-hover:text-gold-light transition-colors duration-300 whitespace-nowrap mt-0.5">
+              Brand Strategy & Consulting
+            </span>
+          </Link>
+        </div>
+
+        {/* Center: Navigation Block */}
+        <nav className="hidden xl:flex items-center justify-center space-x-8 flex-shrink-0">
+          {navItems.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="relative font-sans text-[11px] tracking-widest uppercase py-2 transition-colors duration-300 whitespace-nowrap"
+              >
+                <span
+                  className={`${
+                    isActive ? "text-gold" : "text-gray-custom hover:text-white-custom"
+                  } transition-colors`}
+                >
+                  {item.label}
+                </span>
+                {isActive && (
+                  <motion.span
+                    layoutId="activeNav"
+                    className="absolute bottom-0 left-0 right-0 h-[1px] bg-gold"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* Right Side: Call To Action */}
+        <div className="hidden xl:flex flex-1 justify-end min-w-[200px] lg:min-w-[280px]">
+          <Button variant="outline" href="#contact-form">
+            Schedule a Call
+          </Button>
+        </div>
+
+        {/* Mobile menu button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="xl:hidden z-50 text-white-custom hover:text-gold transition-colors p-2 cursor-pointer"
+          aria-label="Toggle Menu"
+        >
+          {isOpen ? (
+            <IoCloseOutline className="text-3xl" />
+          ) : (
+            <IoMenuOutline className="text-3xl" />
+          )}
+        </button>
+      </div>
+
+      {/* Mobile Drawer */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-background/98 z-40 flex flex-col justify-center px-8 md:px-16"
+          >
+            <nav className="flex flex-col space-y-6 text-center">
+              {navItems.map((item, i) => {
+                const isActive = pathname === item.href;
+                return (
+                  <motion.div
+                    key={item.label}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                  >
+                    <Link
+                      href={item.href}
+                      className={`font-serif text-2xl md:text-3xl tracking-wider uppercase ${
+                        isActive ? "text-gold" : "text-gray-custom hover:text-white-custom"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  </motion.div>
+                );
+              })}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navItems.length * 0.05 }}
+                className="pt-6"
+              >
+                <Button variant="gold" href="#contact-form" className="w-full max-w-xs mx-auto">
+                  Schedule a Call
+                </Button>
+              </motion.div>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
+  );
+}
