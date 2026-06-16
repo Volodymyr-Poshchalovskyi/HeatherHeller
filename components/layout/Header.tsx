@@ -10,11 +10,11 @@ import Button from "@/components/ui/Button";
 const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
+  { label: "Consulting", href: "/consulting" },
   { label: "Experience Lab", href: "/experience-lab" },
-  { label: "Events", href: "/events" },
-  { label: "Brands & Partners", href: "/brands-partners" },
-  { label: "Press", href: "/press" },
+  { label: "Sinners & Saints", href: "/sinners-saints" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Production Portfolio", href: "/production-portfolio" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -43,10 +43,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
         isScrolled
-          ? "bg-background/90 backdrop-blur-md border-b border-gold/10 py-4"
-          : "bg-transparent py-6"
+          ? "bg-background/90 backdrop-blur-md border-gold py-4"
+          : "bg-transparent border-transparent py-6"
       }`}
     >
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex items-center justify-between gap-4 w-full">
@@ -93,7 +93,7 @@ export default function Header() {
 
         {/* Right Side: Call To Action */}
         <div className="hidden xl:flex flex-1 justify-end min-w-[200px] lg:min-w-[280px]">
-          <Button variant="outline" href="#contact-form">
+          <Button variant="outline" href="/contact">
             Schedule a Call
           </Button>
         </div>
@@ -149,7 +149,7 @@ export default function Header() {
                 transition={{ delay: navItems.length * 0.05 }}
                 className="pt-6"
               >
-                <Button variant="gold" href="#contact-form" className="w-full max-w-xs mx-auto">
+                <Button variant="gold" href="/contact" className="w-full max-w-xs mx-auto">
                   Schedule a Call
                 </Button>
               </motion.div>

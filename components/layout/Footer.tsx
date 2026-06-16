@@ -53,8 +53,8 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/services" className="text-gray-custom hover:text-white-custom transition-colors duration-300">
-                Services
+              <Link href="/consulting" className="text-gray-custom hover:text-white-custom transition-colors duration-300">
+                Consulting
               </Link>
             </li>
             <li>
@@ -63,18 +63,18 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/events" className="text-gray-custom hover:text-white-custom transition-colors duration-300">
-                Events
+              <Link href="/sinners-saints" className="text-gray-custom hover:text-white-custom transition-colors duration-300">
+                Sinners & Saints
               </Link>
             </li>
             <li>
-              <Link href="/brands-partners" className="text-gray-custom hover:text-white-custom transition-colors duration-300">
-                Brands & Partners
+              <Link href="/case-studies" className="text-gray-custom hover:text-white-custom transition-colors duration-300">
+                Case Studies
               </Link>
             </li>
             <li>
-              <Link href="/press" className="text-gray-custom hover:text-white-custom transition-colors duration-300">
-                Press
+              <Link href="/production-portfolio" className="text-gray-custom hover:text-white-custom transition-colors duration-300">
+                Production Portfolio
               </Link>
             </li>
             <li>
@@ -87,31 +87,31 @@ export default function Footer() {
 
         {/* Services Column */}
         <div>
-          <h4 className="font-serif text-sm tracking-widest uppercase text-gold font-medium mb-6">Services</h4>
+          <h4 className="font-serif text-sm tracking-widest uppercase text-gold font-medium mb-6">Our Services</h4>
           <ul className="space-y-3 font-sans text-xs uppercase tracking-wider">
             <li>
-              <Link href="/services#brand-positioning" className="text-gray-custom hover:text-white-custom transition-colors duration-300">
-                Brand Positioning
+              <Link href="/consulting#services" className="text-gray-custom hover:text-white-custom transition-colors duration-300">
+                Sponsorship Readiness
               </Link>
             </li>
             <li>
-              <Link href="/services#creative-direction" className="text-gray-custom hover:text-white-custom transition-colors duration-300">
-                Creative Direction
-              </Link>
-            </li>
-            <li>
-              <Link href="/services#experience-design" className="text-gray-custom hover:text-white-custom transition-colors duration-300">
-                Experience Design
-              </Link>
-            </li>
-            <li>
-              <Link href="/services#digital-craft" className="text-gray-custom hover:text-white-custom transition-colors duration-300">
-                Digital Craftsmanship
-              </Link>
-            </li>
-            <li>
-              <Link href="/services#partnership-strategy" className="text-gray-custom hover:text-white-custom transition-colors duration-300">
+              <Link href="/consulting#services" className="text-gray-custom hover:text-white-custom transition-colors duration-300">
                 Strategic Partnerships
+              </Link>
+            </li>
+            <li>
+              <Link href="/experience-lab#services" className="text-gray-custom hover:text-white-custom transition-colors duration-300">
+                Brand Activations & VIP Events
+              </Link>
+            </li>
+            <li>
+              <Link href="/sinners-saints#services" className="text-gray-custom hover:text-white-custom transition-colors duration-300">
+                Content Creation & Production
+              </Link>
+            </li>
+            <li>
+              <Link href="/consulting#who-we-serve" className="text-gray-custom hover:text-white-custom transition-colors duration-300">
+                Talent & Executive Branding
               </Link>
             </li>
           </ul>
