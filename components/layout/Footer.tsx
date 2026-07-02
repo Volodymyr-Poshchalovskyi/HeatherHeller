@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { FaInstagram, FaLinkedinIn, FaPinterestP, FaTwitter } from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -23,17 +23,11 @@ export default function Footer() {
           </p>
           {/* Social Icons */}
           <div className="flex items-center space-x-4 pt-4">
-            <a href="#" className="text-gray-custom hover:text-gold transition-colors duration-300" aria-label="Instagram">
+            <a href="https://www.instagram.com/heatherheller/" target="_blank" rel="noopener noreferrer" className="text-gray-custom hover:text-gold transition-colors duration-300" aria-label="Instagram">
               <FaInstagram className="text-lg" />
             </a>
-            <a href="#" className="text-gray-custom hover:text-gold transition-colors duration-300" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/sinnersandsaints/" target="_blank" rel="noopener noreferrer" className="text-gray-custom hover:text-gold transition-colors duration-300" aria-label="LinkedIn">
               <FaLinkedinIn className="text-lg" />
-            </a>
-            <a href="#" className="text-gray-custom hover:text-gold transition-colors duration-300" aria-label="Pinterest">
-              <FaPinterestP className="text-lg" />
-            </a>
-            <a href="#" className="text-gray-custom hover:text-gold transition-colors duration-300" aria-label="Twitter">
-              <FaTwitter className="text-lg" />
             </a>
           </div>
         </div>

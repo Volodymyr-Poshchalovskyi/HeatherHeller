@@ -6,8 +6,6 @@ import Button from "@/components/ui/Button";
 import { 
   FaInstagram, 
   FaLinkedinIn, 
-  FaPinterestP, 
-  FaTwitter,
   FaCalendarAlt,
   FaEnvelope,
   FaMapMarkerAlt,
@@ -142,17 +140,11 @@ export default function ContactPage() {
                   Follow Our Journal
                 </span>
                 <div className="flex items-center space-x-6 pt-2">
-                  <a href="#" className="text-gray-custom hover:text-gold transition-colors duration-300" aria-label="Instagram">
+                  <a href="https://www.instagram.com/heatherheller/" target="_blank" rel="noopener noreferrer" className="text-gray-custom hover:text-gold transition-colors duration-300" aria-label="Instagram">
                     <FaInstagram className="text-2xl" />
                   </a>
-                  <a href="#" className="text-gray-custom hover:text-gold transition-colors duration-300" aria-label="LinkedIn">
+                  <a href="https://www.linkedin.com/company/sinnersandsaints/" target="_blank" rel="noopener noreferrer" className="text-gray-custom hover:text-gold transition-colors duration-300" aria-label="LinkedIn">
                     <FaLinkedinIn className="text-2xl" />
-                  </a>
-                  <a href="#" className="text-gray-custom hover:text-gold transition-colors duration-300" aria-label="Pinterest">
-                    <FaPinterestP className="text-2xl" />
-                  </a>
-                  <a href="#" className="text-gray-custom hover:text-gold transition-colors duration-300" aria-label="Twitter">
-                    <FaTwitter className="text-2xl" />
                   </a>
                 </div>
               </div>
