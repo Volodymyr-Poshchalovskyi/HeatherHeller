@@ -4,66 +4,73 @@ import React from "react";
 import { motion, Variants } from "framer-motion";
 import Button from "@/components/ui/Button";
 import { 
-  IoShieldOutline, 
-  IoHandRightOutline, 
-  IoPersonOutline, 
-  IoRibbonOutline, 
-  IoBriefcaseOutline, 
-  IoGitNetworkOutline, 
-  IoCompassOutline
-} from "react-icons/io5";
+  TbAward, 
+  TbHeartHandshake, 
+  TbUsers, 
+  TbUserCheck, 
+  TbRocket, 
+  TbTrendingUp, 
+  TbNetwork 
+} from "react-icons/tb";
 
 export default function ConsultingPage() {
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15 },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
   const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
   const services = [
     {
-      icon: <IoRibbonOutline className="text-3xl text-gold" />,
+      num: "01",
+      icon: <TbAward className="text-3xl text-gold" />,
       title: "Sponsorship Readiness",
       description: "Auditing brand equity, packaging digital footprints, and building elite materials to secure blue-chip commercial backing.",
     },
     {
-      icon: <IoGitNetworkOutline className="text-3xl text-gold" />,
+      num: "02",
+      icon: <TbHeartHandshake className="text-3xl text-gold" />,
       title: "Partnership Strategy",
       description: "Negotiating and structuring long-term, high-value joint ventures and brand alignment initiatives.",
     },
     {
-      icon: <IoPersonOutline className="text-3xl text-gold" />,
+      num: "03",
+      icon: <TbUsers className="text-3xl text-gold" />,
       title: "Talent Advisory",
       description: "Bespoke guidance for high-profile talent on asset commercialization, public relations, and career trajectory.",
     },
     {
-      icon: <IoShieldOutline className="text-3xl text-gold" />,
+      num: "04",
+      icon: <TbUserCheck className="text-3xl text-gold" />,
       title: "Executive Branding",
       description: "Positioning C-suite corporate leaders as thought leaders through media placements, speaking roles, and book projects.",
     },
     {
-      icon: <IoCompassOutline className="text-3xl text-gold" />,
+      num: "05",
+      icon: <TbRocket className="text-3xl text-gold" />,
       title: "Founder Branding",
       description: "Grooming high-growth startup founders to command investor interest and public credibility.",
     },
     {
-      icon: <IoBriefcaseOutline className="text-3xl text-gold" />,
+      num: "06",
+      icon: <TbTrendingUp className="text-3xl text-gold" />,
       title: "Business Development",
       description: "Accelerating market entry and high-end sales pipelines through targeted B2B client acquisition strategy.",
     },
     {
-      icon: <IoHandRightOutline className="text-3xl text-gold" />,
+      num: "07",
+      icon: <TbNetwork className="text-3xl text-gold" />,
       title: "Strategic Introductions",
       description: "Facilitating confidential warm introductions into high-net-worth circles and boardrooms.",
     },
@@ -88,7 +95,7 @@ export default function ConsultingPage() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="space-y-24"
+          className="space-y-32"
         >
           {/* SECTION 1: Page Title & Overview */}
           <motion.div variants={itemVariants} className="max-w-4xl space-y-6">
@@ -96,7 +103,7 @@ export default function ConsultingPage() {
               SERVICES
             </span>
             <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl tracking-tight leading-none font-light">
-              Brand & Strategic Consulting
+              Brand &amp; Strategic Consulting
             </h1>
             <div className="w-24 h-[1px] bg-gold/40 my-6" />
             <p className="font-serif text-2xl md:text-3xl lg:text-4xl text-gold-light italic font-light leading-snug">
@@ -104,32 +111,37 @@ export default function ConsultingPage() {
             </p>
           </motion.div>
 
-          {/* SECTION 2: Detailed Services List */}
+          {/* SECTION 2: Detailed Services List (Elegant Row Layout) */}
           <motion.div id="services" variants={itemVariants} className="border-t border-gold/10 pt-20">
-            <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+            <div className="max-w-3xl mb-16 space-y-4">
               <span className="font-sans text-xs tracking-[0.3em] uppercase text-gold font-bold block">
                 OFFERINGS
               </span>
-              <h2 className="font-serif text-3xl md:text-5xl text-white-custom font-medium tracking-tight">
+              <h2 className="font-serif text-4xl md:text-5xl text-white-custom font-light tracking-tight">
                 Our Consulting Services
               </h2>
-              <div className="w-12 h-[1px] bg-gold/40 mx-auto" />
+              <div className="w-16 h-[1px] bg-gold/40" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <div className="space-y-0">
               {services.map((service) => (
                 <div
                   key={service.title}
-                  className="bg-secondary border border-gold/10 p-8 flex flex-col justify-between hover:border-gold/30 hover:y-[-4px] transition-all duration-300 group min-h-[260px]"
+                  className="flex flex-col md:flex-row items-start justify-between py-8 border-b border-gold/15 group gap-6 first:pt-0"
                 >
-                  <div>
-                    <div className="p-3 border border-gold/15 bg-background text-gold group-hover:bg-gold group-hover:text-background transition-all duration-300 w-fit mb-6">
+                  <div className="flex items-center space-x-6 md:w-5/12">
+                    <span className="font-serif text-lg text-gold/40 font-medium">
+                      {service.num}
+                    </span>
+                    <div className="p-3 border border-gold/20 bg-secondary/30 text-gold group-hover:bg-gold group-hover:text-background transition-colors duration-300">
                       {service.icon}
                     </div>
-                    <h3 className="font-serif text-xl text-white-custom mb-3 font-semibold group-hover:text-gold transition-colors duration-300">
+                    <h3 className="font-serif text-2xl text-white-custom font-medium group-hover:text-gold transition-colors duration-300">
                       {service.title}
                     </h3>
-                    <p className="font-sans text-xs md:text-sm text-gray-custom/80 font-light leading-relaxed">
+                  </div>
+                  <div className="md:w-7/12 flex items-center h-full pt-1 md:pt-0">
+                    <p className="font-sans text-base text-gray-custom/85 font-light leading-relaxed">
                       {service.description}
                     </p>
                   </div>
@@ -145,30 +157,27 @@ export default function ConsultingPage() {
                 <span className="font-sans text-xs tracking-[0.3em] uppercase text-gold font-bold block">
                   CLIENT SEGMENTS
                 </span>
-                <h2 className="font-serif text-3xl md:text-4xl text-white-custom font-semibold tracking-tight">
+                <h2 className="font-serif text-4xl md:text-5xl text-white-custom tracking-tight font-light">
                   Who We Serve
                 </h2>
-                <p className="font-sans text-sm text-gray-custom/80 font-light leading-relaxed">
+                <p className="font-sans text-base text-gray-custom/80 font-light leading-relaxed">
                   We partner with select, high-value individuals and enterprises to scale influence, partnerships, and market capitalization.
                 </p>
               </div>
 
-              <div className="lg:col-span-8 space-y-6">
+              <div className="lg:col-span-8 space-y-0">
                 {clientSegments.map((segment, idx) => (
                   <div
                     key={segment.type}
-                    className="flex flex-col md:flex-row items-start md:items-center justify-between p-8 bg-secondary border border-gold/10 hover:border-gold/30 transition-all duration-300 gap-4"
+                    className="flex flex-col md:flex-row items-start justify-between py-10 border-b border-gold/10 gap-6 group first:pt-0"
                   >
                     <div className="md:w-1/3">
-                      <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-gold font-bold block mb-1">
-                        SEGMENT {idx + 1}
-                      </span>
-                      <h3 className="font-serif text-2xl text-white-custom font-bold">
+                      <h3 className="font-serif text-3xl text-white-custom font-medium group-hover:text-gold transition-colors duration-300">
                         {segment.type}
                       </h3>
                     </div>
                     <div className="md:w-2/3">
-                      <p className="font-sans text-xs md:text-sm text-gray-custom/90 font-light leading-relaxed">
+                      <p className="font-sans text-base text-gray-custom/85 font-light leading-relaxed">
                         {segment.desc}
                       </p>
                     </div>
@@ -177,7 +186,6 @@ export default function ConsultingPage() {
               </div>
             </div>
           </motion.div>
-
           {/* SECTION 4: Success Stories */}
           <motion.div variants={itemVariants} className="border-t border-gold/10 pt-20">
             <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">

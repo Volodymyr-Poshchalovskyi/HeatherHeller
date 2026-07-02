@@ -3,62 +3,68 @@
 import React from "react";
 import { motion, Variants } from "framer-motion";
 import Button from "@/components/ui/Button";
+
 import { 
-  IoCameraOutline, 
-  IoVideocamOutline, 
-  IoRadioOutline, 
-  IoCalendarOutline, 
-  IoShareSocialOutline, 
-  IoBookOutline,
-  IoPlayOutline
-} from "react-icons/io5";
+  TbCamera, 
+  TbMovie, 
+  TbMicrophone, 
+  TbCalendar, 
+  TbSocial, 
+  TbBook 
+} from "react-icons/tb";
 
 export default function SinnersSaintsPage() {
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.15 },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
   const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
   const services = [
     {
-      icon: <IoCameraOutline className="text-3xl text-gold" />,
+      num: "I",
+      icon: <TbCamera className="text-3xl text-gold" />,
       title: "Photography",
       description: "Editorial, high-fashion portraits and brand lifestyle imagery that establish visual authority.",
     },
     {
-      icon: <IoVideocamOutline className="text-3xl text-gold" />,
+      num: "II",
+      icon: <TbMovie className="text-3xl text-gold" />,
       title: "Video Production",
       description: "Cinematic brand commercials, executive documentaries, and short-form storytelling assets.",
     },
     {
-      icon: <IoRadioOutline className="text-3xl text-gold" />,
+      num: "III",
+      icon: <TbMicrophone className="text-3xl text-gold" />,
       title: "Podcast Production",
       description: "End-to-end studio recording, editing, sound design, and distribution setup for executive podcasts.",
     },
     {
-      icon: <IoCalendarOutline className="text-3xl text-gold" />,
+      num: "IV",
+      icon: <TbCalendar className="text-3xl text-gold" />,
       title: "Event Coverage",
       description: "Prestige photo and video documentation capturing activations, galas, and VIP experiences.",
     },
     {
-      icon: <IoShareSocialOutline className="text-3xl text-gold" />,
+      num: "V",
+      icon: <TbSocial className="text-3xl text-gold" />,
       title: "Social Media Content",
       description: "High-end vertical video reels, graphic grids, and copy that drive engaged luxury audiences.",
     },
     {
-      icon: <IoBookOutline className="text-3xl text-gold" />,
+      num: "VI",
+      icon: <TbBook className="text-3xl text-gold" />,
       title: "Brand Storytelling",
       description: "Crafting a brand's narrative core, writing speeches, and scripting creative campaigns.",
     },
@@ -90,7 +96,7 @@ export default function SinnersSaintsPage() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="space-y-24"
+          className="space-y-32"
         >
           {/* SECTION 1: Page Title & Overview */}
           <motion.div variants={itemVariants} className="max-w-4xl space-y-6">
@@ -98,7 +104,7 @@ export default function SinnersSaintsPage() {
               THE CONTENT ENGINE
             </span>
             <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl tracking-tight leading-none font-light">
-              Sinners & Saints
+              Sinners &amp; Saints
             </h1>
             <div className="w-24 h-[1px] bg-gold/40 my-6" />
             <p className="font-serif text-2xl md:text-3xl lg:text-4xl text-gold-light italic font-light leading-snug">
@@ -108,35 +114,91 @@ export default function SinnersSaintsPage() {
 
           {/* SECTION 2: Services Grid */}
           <motion.div id="services" variants={itemVariants} className="border-t border-gold/10 pt-20">
-            <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+            <div className="max-w-3xl mb-16 space-y-4">
               <span className="font-sans text-xs tracking-[0.3em] uppercase text-gold font-bold block">
                 CREATIVE SUITE
               </span>
-              <h2 className="font-serif text-3xl md:text-5xl text-white-custom font-medium tracking-tight">
+              <h2 className="font-serif text-4xl md:text-5xl text-white-custom font-light tracking-tight">
                 Production Services
               </h2>
-              <div className="w-12 h-[1px] bg-gold/40 mx-auto" />
+              <div className="w-16 h-[1px] bg-gold/40" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {services.map((service) => (
-                <div
-                  key={service.title}
-                  className="bg-secondary border border-gold/10 p-8 flex flex-col justify-between hover:border-gold/30 hover:y-[-4px] transition-all duration-300 group min-h-[240px]"
-                >
-                  <div>
-                    <div className="p-3 border border-gold/15 bg-background text-gold group-hover:bg-gold group-hover:text-background transition-all duration-300 w-fit mb-6">
-                      {service.icon}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+              {/* Column 1 */}
+              <div className="space-y-16">
+                {[services[0], services[3]].map((service) => (
+                  <div
+                    key={service.title}
+                    className="flex flex-col space-y-4 pt-6 border-t border-gold/25 group"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="font-serif text-xs text-gold/60 font-semibold tracking-wider">
+                        {service.num}
+                      </span>
+                      <div className="p-2.5 border border-gold/20 bg-secondary/20 text-gold group-hover:bg-gold group-hover:text-background transition-all duration-300">
+                        {service.icon}
+                      </div>
                     </div>
-                    <h3 className="font-serif text-xl text-white-custom mb-3 font-semibold group-hover:text-gold transition-colors duration-300">
+                    <h3 className="font-serif text-2xl text-white-custom font-medium group-hover:text-gold transition-colors duration-300">
                       {service.title}
                     </h3>
-                    <p className="font-sans text-xs md:text-sm text-gray-custom/80 font-light leading-relaxed">
+                    <p className="font-sans text-sm md:text-[15px] text-gray-custom/85 font-light leading-relaxed">
                       {service.description}
                     </p>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+
+              {/* Column 2 - staggered/shifted down on lg screens */}
+              <div className="space-y-16 lg:mt-12">
+                {[services[1], services[4]].map((service) => (
+                  <div
+                    key={service.title}
+                    className="flex flex-col space-y-4 pt-6 border-t border-gold/25 group"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="font-serif text-xs text-gold/60 font-semibold tracking-wider">
+                        {service.num}
+                      </span>
+                      <div className="p-2.5 border border-gold/20 bg-secondary/20 text-gold group-hover:bg-gold group-hover:text-background transition-all duration-300">
+                        {service.icon}
+                      </div>
+                    </div>
+                    <h3 className="font-serif text-2xl text-white-custom font-medium group-hover:text-gold transition-colors duration-300">
+                      {service.title}
+                    </h3>
+                    <p className="font-sans text-sm md:text-[15px] text-gray-custom/85 font-light leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Column 3 */}
+              <div className="space-y-16">
+                {[services[2], services[5]].map((service) => (
+                  <div
+                    key={service.title}
+                    className="flex flex-col space-y-4 pt-6 border-t border-gold/25 group"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="font-serif text-xs text-gold/60 font-semibold tracking-wider">
+                        {service.num}
+                      </span>
+                      <div className="p-2.5 border border-gold/20 bg-secondary/20 text-gold group-hover:bg-gold group-hover:text-background transition-all duration-300">
+                        {service.icon}
+                      </div>
+                    </div>
+                    <h3 className="font-serif text-2xl text-white-custom font-medium group-hover:text-gold transition-colors duration-300">
+                      {service.title}
+                    </h3>
+                    <p className="font-sans text-sm md:text-[15px] text-gray-custom/85 font-light leading-relaxed">
+                      {service.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
           </motion.div>
 
@@ -171,7 +233,10 @@ export default function SinnersSaintsPage() {
                     {idx === 0 && (
                       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                         <div className="w-16 h-16 rounded-full border border-gold/40 bg-background/85 flex items-center justify-center text-gold group-hover:scale-110 group-hover:bg-gold group-hover:text-background transition-all duration-300">
-                          <IoPlayOutline className="text-2xl ml-1" />
+                          {/* Premium Minimal Play Icon SVG */}
+                          <svg className="w-5 h-5 fill-current ml-1 text-gold group-hover:text-background transition-colors duration-300" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
                         </div>
                       </div>
                     )}
