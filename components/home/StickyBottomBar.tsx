@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaQuoteLeft } from "react-icons/fa";
 
@@ -66,12 +67,12 @@ export default function StickyBottomBar() {
                 </p>
               </div>
 
-              <a
+              <Link
                 href="/#contact-form"
                 className="flex-shrink-0 inline-flex items-center justify-center font-sans uppercase tracking-widest text-sm font-semibold px-10 py-5 border transition-all duration-300 bg-gold text-background border-gold hover:bg-[#dbb271] hover:border-[#dbb271] hover:-translate-y-[2px] hover:shadow-[0_6px_25px_rgba(199,154,83,0.45)] whitespace-nowrap"
               >
                 Schedule a Call
-              </a>
+              </Link>
             </div>
 
           </div>

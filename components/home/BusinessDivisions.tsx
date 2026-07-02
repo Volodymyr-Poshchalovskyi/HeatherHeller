@@ -60,36 +60,32 @@ const divisions = [
 
 export default function BusinessDivisions() {
   return (
-    <section className="bg-white w-full text-secondary relative z-20" style={{ height: "220px" }}>
+    <section className="bg-white w-full text-secondary relative z-20 h-[140px] lg:h-[220px]">
       <div className="grid grid-cols-3 h-full w-full">
-        {divisions.map((division, idx) => (
-          <div key={division.id} className="relative flex h-full">
-            {/* Gold half-height vertical divider on the left (except first) */}
-            {idx !== 0 && (
-              <div className="absolute left-0 top-0 h-full flex items-center pointer-events-none z-10">
-                <div className="w-[1px] bg-gold/50" style={{ height: "50%" }} />
-              </div>
-            )}
-
-            {/* Block content: left logo | right text */}
-            <div className="flex flex-row w-full h-full">
-              {/* LEFT: Logo */}
-              <div className="w-1/2 flex items-center justify-center px-4 border-r border-transparent">
+        {divisions.map((division) => (
+          <div key={division.id} className="relative flex flex-col lg:flex-row h-full items-center justify-center py-3 lg:py-0 border-r border-gold/15 last:border-r-0">
+            {/* Block content: stacked on mobile, left-logo/right-text on desktop */}
+            <div className="flex flex-col lg:flex-row w-full h-full items-center justify-center lg:items-stretch px-2 sm:px-4">
+              {/* Logo container */}
+              <div className="w-full lg:w-1/2 flex items-center justify-center mb-2 lg:mb-0 transform scale-75 sm:scale-90 lg:scale-100">
                 {division.logo}
               </div>
 
-              {/* RIGHT: Text + button */}
-              <div className="w-1/2 flex flex-col justify-center px-5 xl:px-6 space-y-3">
-                <p className="font-sans text-[13px] xl:text-sm text-secondary font-light leading-[1.65]">
+              {/* Text / Link container */}
+              <div className="w-full lg:w-1/2 flex flex-col justify-center lg:px-4 space-y-1 lg:space-y-3 text-center lg:text-left">
+                {/* Description - only visible on lg screens */}
+                <p className="hidden lg:block font-sans text-[13px] xl:text-sm text-secondary font-light leading-[1.65]">
                   {division.description}
                 </p>
-                <Link
-                  href={division.link}
-                  className="inline-flex items-center gap-2 font-sans text-sm xl:text-base font-semibold tracking-widest uppercase text-gold underline underline-offset-4 decoration-gold hover:text-gold-light hover:decoration-gold-light transition-colors duration-300 group"
-                >
-                  Learn More
-                  <IoArrowForward className="text-xs group-hover:translate-x-1 transition-transform duration-300 no-underline" />
-                </Link>
+                <div className="flex justify-center lg:justify-start">
+                  <Link
+                    href={division.link}
+                    className="inline-flex items-center gap-1 sm:gap-2 font-sans text-[10px] sm:text-xs xl:text-base font-semibold tracking-widest uppercase text-gold underline underline-offset-4 decoration-gold hover:text-gold-light hover:decoration-gold-light transition-colors duration-300 group"
+                  >
+                    Learn More
+                    <IoArrowForward className="text-[9px] sm:text-xs group-hover:translate-x-1 transition-transform duration-300 no-underline" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

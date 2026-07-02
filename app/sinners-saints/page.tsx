@@ -124,13 +124,16 @@ export default function SinnersSaintsPage() {
               <div className="w-16 h-[1px] bg-gold/40" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
-              {/* Column 1 */}
-              <div className="space-y-16">
-                {[services[0], services[3]].map((service) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 lg:gap-y-24">
+              {services.map((service, idx) => {
+                // Determine vertical stagger shift for the middle column on desktop
+                const isMiddleColumn = idx % 3 === 1;
+                return (
                   <div
                     key={service.title}
-                    className="flex flex-col space-y-4 pt-6 border-t border-gold/25 group"
+                    className={`flex flex-col space-y-4 pt-6 border-t border-gold/25 group ${
+                      isMiddleColumn ? "lg:translate-y-12" : ""
+                    }`}
                   >
                     <div className="flex items-center justify-between">
                       <span className="font-serif text-xs text-gold/60 font-semibold tracking-wider">
@@ -147,58 +150,8 @@ export default function SinnersSaintsPage() {
                       {service.description}
                     </p>
                   </div>
-                ))}
-              </div>
-
-              {/* Column 2 - staggered/shifted down on lg screens */}
-              <div className="space-y-16 lg:mt-12">
-                {[services[1], services[4]].map((service) => (
-                  <div
-                    key={service.title}
-                    className="flex flex-col space-y-4 pt-6 border-t border-gold/25 group"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="font-serif text-xs text-gold/60 font-semibold tracking-wider">
-                        {service.num}
-                      </span>
-                      <div className="p-2.5 border border-gold/20 bg-secondary/20 text-gold group-hover:bg-gold group-hover:text-background transition-all duration-300">
-                        {service.icon}
-                      </div>
-                    </div>
-                    <h3 className="font-serif text-2xl text-white-custom font-medium group-hover:text-gold transition-colors duration-300">
-                      {service.title}
-                    </h3>
-                    <p className="font-sans text-sm md:text-[15px] text-gray-custom/85 font-light leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              {/* Column 3 */}
-              <div className="space-y-16">
-                {[services[2], services[5]].map((service) => (
-                  <div
-                    key={service.title}
-                    className="flex flex-col space-y-4 pt-6 border-t border-gold/25 group"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="font-serif text-xs text-gold/60 font-semibold tracking-wider">
-                        {service.num}
-                      </span>
-                      <div className="p-2.5 border border-gold/20 bg-secondary/20 text-gold group-hover:bg-gold group-hover:text-background transition-all duration-300">
-                        {service.icon}
-                      </div>
-                    </div>
-                    <h3 className="font-serif text-2xl text-white-custom font-medium group-hover:text-gold transition-colors duration-300">
-                      {service.title}
-                    </h3>
-                    <p className="font-sans text-sm md:text-[15px] text-gray-custom/85 font-light leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
+                );
+              })}
             </div>
           </motion.div>
 

@@ -48,7 +48,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="relative flex bg-background overflow-hidden" style={{ height: "calc(100vh - 308px)", marginTop: "88px" }}>
+    <section className="relative flex bg-background overflow-hidden h-auto lg:h-[calc(100vh-308px)] mt-[88px] py-12 lg:py-0">
       {/* Ambient background light */}
       <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[150px] pointer-events-none" />
 
@@ -56,7 +56,7 @@ export default function HeroSection() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="grid grid-cols-1 lg:grid-cols-12 w-full h-full"
+        className="grid grid-cols-1 lg:grid-cols-12 w-full h-full gap-12 lg:gap-0"
       >
         {/* LEFT: Portrait image (5 columns) */}
         <motion.div
@@ -77,10 +77,10 @@ export default function HeroSection() {
         {/* CENTER: Main Content (4 columns) */}
         <motion.div
           variants={itemVariants}
-          className="w-full lg:col-span-4 flex flex-col justify-center space-y-5 z-20 px-8 lg:px-10 xl:px-12"
+          className="w-full lg:col-span-4 flex flex-col justify-center space-y-5 z-20 px-6 sm:px-8 lg:px-10 xl:px-12"
         >
           {/* Tagline above heading */}
-          <span className="font-sans text-[12px] md:text-[13px] tracking-[0.4em] uppercase text-gold font-bold block">
+          <span className="font-sans text-[11px] sm:text-[12px] md:text-[13px] tracking-[0.2em] sm:tracking-[0.4em] uppercase text-gold font-bold block whitespace-nowrap overflow-x-auto scrollbar-none">
             Strategy&nbsp;&nbsp;·&nbsp;&nbsp;Connections&nbsp;&nbsp;·&nbsp;&nbsp;Experience&nbsp;&nbsp;·&nbsp;&nbsp;Results
           </span>
 
@@ -110,25 +110,25 @@ export default function HeroSection() {
           </div>
         </motion.div>
 
-        {/* RIGHT: Feature cards panel — full hero height, horizontal borders only, no hover effects (3 columns) */}
+        {/* RIGHT: Feature cards panel — horizontal grid on mobile, vertical on desktop */}
         <motion.div
           variants={itemVariants}
-          className="w-full lg:col-span-3 flex flex-col justify-between h-full"
+          className="w-full lg:col-span-3 grid grid-cols-2 md:grid-cols-4 lg:flex lg:flex-col lg:justify-between h-auto lg:h-full border-t border-b lg:border-t-0 lg:border-b-0 border-gold/15"
         >
           {features.map((feature, idx) => (
             <div
               key={feature.title}
-              className={`flex-1 flex flex-col justify-center px-7 xl:px-10 py-6 ${
-                idx !== features.length - 1 ? "border-b border-gold/15" : ""
-              }`}
+              className={`flex flex-col justify-center px-6 sm:px-8 lg:px-7 xl:px-10 py-6 lg:py-6 border-r border-b border-gold/15 last:border-r-0 lg:last:border-b-0 lg:border-r-0 ${
+                idx % 2 === 1 ? "border-r-0" : ""
+              } ${idx >= 2 ? "border-b-0" : "lg:border-b"} md:border-r md:last:border-r-0`}
             >
               <div className="flex-shrink-0 mb-3 text-gold">
                 {feature.icon}
               </div>
-              <h4 className="font-serif text-base xl:text-lg text-white-custom font-semibold tracking-wide uppercase mb-1.5">
+              <h4 className="font-serif text-sm sm:text-base xl:text-lg text-white-custom font-semibold tracking-wide uppercase mb-1.5">
                 {feature.title}
               </h4>
-              <p className="font-sans text-sm xl:text-[14px] text-gray-custom/80 font-light leading-relaxed whitespace-pre-line">
+              <p className="font-sans text-[11px] sm:text-xs xl:text-[14px] text-gray-custom/80 font-light leading-relaxed whitespace-pre-line">
                 {feature.text}
               </p>
             </div>

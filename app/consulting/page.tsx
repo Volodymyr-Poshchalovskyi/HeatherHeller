@@ -166,7 +166,7 @@ export default function ConsultingPage() {
               </div>
 
               <div className="lg:col-span-8 space-y-0">
-                {clientSegments.map((segment, idx) => (
+                {clientSegments.map((segment) => (
                   <div
                     key={segment.type}
                     className="flex flex-col md:flex-row items-start justify-between py-10 border-b border-gold/10 gap-6 group first:pt-0"

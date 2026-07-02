@@ -1,12 +1,10 @@
 "use client";
 
 import React from "react";
-import { motion, Variants } from "react-transition-group"; // Not actually using react-transition-group, let's stick to framer-motion but clean it up
-
-import { motion as motion2, Variants as Variants2 } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 export default function AboutPage() {
-  const containerVariants: Variants2 = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -16,7 +14,7 @@ export default function AboutPage() {
     },
   };
 
-  const itemVariants: Variants2 = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -55,14 +53,14 @@ export default function AboutPage() {
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-[1600px] mx-auto px-6 md:px-12 w-full z-10 relative">
-        <motion2.div
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           className="space-y-32"
         >
           {/* SECTION 1: Page Header & Meet Heather */}
-          <motion2.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             {/* Header Text */}
             <div className="lg:col-span-7 space-y-6">
               <span className="font-sans text-xs tracking-[0.35em] uppercase text-gold font-bold block">
@@ -93,10 +91,10 @@ export default function AboutPage() {
                 <div className="absolute inset-0 bg-background/10 group-hover:bg-transparent transition-colors duration-500" />
               </div>
             </div>
-          </motion2.div>
+          </motion.div>
 
           {/* SECTION 2: Experience & Influence (Asymmetrical Vertical List) */}
-          <motion2.div variants={itemVariants} className="border-t border-gold/10 pt-20">
+          <motion.div variants={itemVariants} className="border-t border-gold/10 pt-20">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
               <div className="lg:col-span-4 space-y-4 lg:sticky lg:top-32 h-fit">
                 <span className="font-sans text-xs tracking-[0.3em] uppercase text-gold font-bold block">
@@ -132,7 +130,7 @@ export default function AboutPage() {
                     title: "Experiential Formats",
                     text: "Architecting exclusive brand salons, VIP speaker panels at Davos and Cannes, health and luxury retreats, and custom spatial activations."
                   }
-                ].map((exp, idx) => (
+                ].map((exp) => (
                   <div key={exp.num} className="group grid grid-cols-1 md:grid-cols-12 gap-6 pb-12 border-b border-gold/10 last:border-0 last:pb-0">
                     <div className="md:col-span-2 flex items-start">
                       <span className="font-serif text-4xl xl:text-5xl text-gold/45 font-light leading-none">
@@ -151,10 +149,10 @@ export default function AboutPage() {
                 ))}
               </div>
             </div>
-          </motion2.div>
+          </motion.div>
 
           {/* SECTION 3: Philosophy (Clean Editorial Columns) */}
-          <motion2.div variants={itemVariants} className="border-t border-gold/10 pt-20">
+          <motion.div variants={itemVariants} className="border-t border-gold/10 pt-20">
             <div className="max-w-3xl mb-20 space-y-4">
               <span className="font-sans text-xs tracking-[0.3em] uppercase text-gold font-bold block">
                 METHODOLOGY
@@ -183,10 +181,10 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
-          </motion2.div>
+          </motion.div>
 
           {/* SECTION 4: Why We Do What We Do */}
-          <motion2.div variants={itemVariants} className="border-t border-gold/10 pt-20">
+          <motion.div variants={itemVariants} className="border-t border-gold/10 pt-20">
             <div className="bg-[#f4f1ec] text-secondary p-12 md:p-20 relative overflow-hidden">
               <div className="max-w-4xl mx-auto space-y-8 text-center">
                 <span className="font-sans text-xs tracking-[0.3em] uppercase text-gold font-bold block">
@@ -208,9 +206,9 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-          </motion2.div>
+          </motion.div>
 
-        </motion2.div>
+        </motion.div>
       </div>
     </div>
   );
