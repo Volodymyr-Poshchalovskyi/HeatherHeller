@@ -37,6 +37,7 @@ export default function Button({
     return (
       <motion.a
         href={href}
+        id={props.id}
         className={combinedClassName}
         whileTap={{ scale: 0.98 }}
       >

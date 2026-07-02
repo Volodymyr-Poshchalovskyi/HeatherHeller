@@ -10,7 +10,8 @@ import {
   FaTwitter,
   FaCalendarAlt,
   FaEnvelope,
-  FaMapMarkerAlt
+  FaMapMarkerAlt,
+  FaPhone
 } from "react-icons/fa";
 
 export default function ContactPage() {
@@ -87,7 +88,7 @@ export default function ContactPage() {
                 <div className="bg-background border border-gold/5 p-4 flex justify-between items-center">
                   <span className="font-sans text-xs text-gray-custom font-light">Availability: Mon - Fri</span>
                   <a 
-                    href="mailto:concierge@heatherheller.com?subject=Discovery%20Call%20Request"
+                    href="mailto:heather@heatherheller.com?subject=Discovery%20Call%20Request"
                     className="font-sans text-[10px] tracking-widest text-gold hover:text-gold-light uppercase font-bold"
                   >
                     Request Appointment
@@ -101,10 +102,10 @@ export default function ContactPage() {
                   <FaEnvelope className="text-gold text-lg mt-1" />
                   <div>
                     <span className="font-sans text-[9px] tracking-widest uppercase text-gold font-bold block mb-1">
-                      Direct Inquiries
+                      Email
                     </span>
-                    <a href="mailto:concierge@heatherheller.com" className="font-serif text-lg text-white-custom hover:text-gold transition-colors duration-300">
-                      concierge@heatherheller.com
+                    <a href="mailto:heather@heatherheller.com" className="font-serif text-lg text-white-custom hover:text-gold transition-colors duration-300">
+                      heather@heatherheller.com
                     </a>
                   </div>
                 </div>
@@ -113,12 +114,24 @@ export default function ContactPage() {
                   <FaMapMarkerAlt className="text-gold text-lg mt-1" />
                   <div>
                     <span className="font-sans text-[9px] tracking-widest uppercase text-gold font-bold block mb-1">
-                      Global Headquarters
+                      Office
                     </span>
                     <p className="font-sans text-xs md:text-sm text-gray-custom leading-relaxed font-light">
-                      Fifth Avenue & 57th Street<br />
-                      New York, NY 10022
+                      7080 Hollywood Blvd., 7th Floor<br />
+                      Los Angeles, CA 90028
                     </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <FaPhone className="text-gold text-lg mt-1" />
+                  <div>
+                    <span className="font-sans text-[9px] tracking-widest uppercase text-gold font-bold block mb-1">
+                      Phone
+                    </span>
+                    <a href="tel:+13103837094" className="font-serif text-lg text-white-custom hover:text-gold transition-colors duration-300">
+                      +1 310-383-7094
+                    </a>
                   </div>
                 </div>
               </div>

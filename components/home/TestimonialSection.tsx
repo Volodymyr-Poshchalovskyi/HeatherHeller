@@ -6,7 +6,7 @@ import { FaQuoteLeft } from "react-icons/fa";
 
 export default function TestimonialSection() {
   return (
-    <section className="py-20 lg:py-[120px] bg-background relative overflow-hidden">
+    <section className="py-20 lg:hidden bg-background relative overflow-hidden">
       {/* Subtle ambient lighting */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-gold/5 rounded-full blur-[100px] pointer-events-none" />
 

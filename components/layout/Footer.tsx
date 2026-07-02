@@ -122,22 +122,22 @@ export default function Footer() {
           <h4 className="font-serif text-sm tracking-widest uppercase text-gold font-medium mb-6">Contact</h4>
           <ul className="space-y-4 text-sm font-light text-gray-custom">
             <li>
-              <span className="block text-xs uppercase tracking-widest text-white-custom mb-1">Global Headquarters</span>
+              <span className="block text-xs uppercase tracking-widest text-white-custom mb-1">Office</span>
               <p className="leading-relaxed">
-                Fifth Avenue & 57th Street<br />
-                New York, NY 10022
+                7080 Hollywood Blvd., 7th Floor<br />
+                Los Angeles, CA 90028
               </p>
             </li>
             <li>
-              <span className="block text-xs uppercase tracking-widest text-white-custom mb-1">Inquiries</span>
-              <a href="mailto:concierge@heatherheller.com" className="hover:text-gold transition-colors duration-300">
-                concierge@heatherheller.com
+              <span className="block text-xs uppercase tracking-widest text-white-custom mb-1">Email</span>
+              <a href="mailto:heather@heatherheller.com" className="hover:text-gold transition-colors duration-300">
+                heather@heatherheller.com
               </a>
             </li>
             <li>
-              <span className="block text-xs uppercase tracking-widest text-white-custom mb-1">Telephone</span>
-              <a href="tel:+12125550199" className="hover:text-gold transition-colors duration-300">
-                +1 (212) 555-0199
+              <span className="block text-xs uppercase tracking-widest text-white-custom mb-1">Phone</span>
+              <a href="tel:+13103837094" className="hover:text-gold transition-colors duration-300">
+                +1 310-383-7094
               </a>
             </li>
           </ul>

@@ -49,51 +49,46 @@ export default function Header() {
           : "bg-transparent border-transparent py-6"
       }`}
     >
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12 flex items-center justify-between gap-4 w-full">
+      <div className="w-full px-6 md:px-12 flex items-center justify-between gap-4">
         {/* Left Side: Logo */}
-        <div className="flex-1 flex justify-start min-w-[200px] lg:min-w-[280px]">
+        <div className="flex-shrink-0">
           <Link href="/" className="z-50 group">
-            <span className="font-serif text-lg md:text-2xl tracking-[0.2em] uppercase font-light text-white-custom group-hover:text-gold transition-colors duration-300 whitespace-nowrap block">
+            <span className="font-serif text-2xl md:text-3xl tracking-[0.2em] uppercase font-light text-gold whitespace-nowrap block">
               Heather Heller
-            </span>
-            <span className="block text-[8px] tracking-[0.4em] uppercase text-gold font-sans font-semibold group-hover:text-gold-light transition-colors duration-300 whitespace-nowrap mt-0.5">
-              Brand Strategy & Consulting
             </span>
           </Link>
         </div>
 
-        {/* Center: Navigation Block */}
-        <nav className="hidden xl:flex items-center justify-center space-x-8 flex-shrink-0">
-          {navItems.map((item) => {
-            const isActive = pathname === item.href;
-            return (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="relative font-sans text-[11px] tracking-widest uppercase py-2 transition-colors duration-300 whitespace-nowrap"
-              >
-                <span
-                  className={`${
-                    isActive ? "text-gold" : "text-gray-custom hover:text-white-custom"
-                  } transition-colors`}
+        {/* Right Side: Navigation + CTA */}
+        <div className="hidden xl:flex items-center space-x-8 ml-auto">
+          <nav className="flex items-center space-x-8">
+            {navItems.map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className="relative font-sans text-[13px] tracking-widest uppercase py-2 transition-colors duration-300 whitespace-nowrap"
                 >
-                  {item.label}
-                </span>
-                {isActive && (
-                  <motion.span
-                    layoutId="activeNav"
-                    className="absolute bottom-0 left-0 right-0 h-[1px] bg-gold"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
-              </Link>
-            );
-          })}
-        </nav>
-
-        {/* Right Side: Call To Action */}
-        <div className="hidden xl:flex flex-1 justify-end min-w-[200px] lg:min-w-[280px]">
-          <Button variant="outline" href="/contact">
+                  <span
+                    className={`${
+                      isActive ? "text-gold" : "text-gray-custom hover:text-white-custom"
+                    } transition-colors`}
+                  >
+                    {item.label}
+                  </span>
+                  {isActive && (
+                    <motion.span
+                      layoutId="activeNav"
+                      className="absolute bottom-0 left-0 right-0 h-[1px] bg-gold"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </Link>
+              );
+            })}
+          </nav>
+          <Button variant="outline" href="/#contact-form">
             Schedule a Call
           </Button>
         </div>

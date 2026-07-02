@@ -44,19 +44,40 @@ export default function ContactSection() {
               </p>
             </div>
 
-            <div className="border-t border-gold/15 pt-8">
-              <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-gold block mb-2 font-semibold">
-                Direct Inquiry
-              </span>
-              <a
-                href="mailto:concierge@heatherheller.com"
-                className="font-serif text-lg md:text-xl text-white-custom hover:text-gold transition-colors duration-300 block mb-1"
-              >
-                concierge@heatherheller.com
-              </a>
-              <span className="font-sans text-xs text-gray-custom/60 uppercase">
-                Response within 24 business hours
-              </span>
+            <div className="border-t border-gold/15 pt-8 space-y-6">
+              <div>
+                <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-gold block mb-2 font-semibold">
+                  Email
+                </span>
+                <a
+                  href="mailto:heather@heatherheller.com"
+                  className="font-serif text-lg md:text-xl text-white-custom hover:text-gold transition-colors duration-300 block"
+                >
+                  heather@heatherheller.com
+                </a>
+              </div>
+
+              <div>
+                <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-gold block mb-2 font-semibold">
+                  Phone
+                </span>
+                <a
+                  href="tel:+13103837094"
+                  className="font-serif text-lg md:text-xl text-white-custom hover:text-gold transition-colors duration-300 block"
+                >
+                  +1 310-383-7094
+                </a>
+              </div>
+
+              <div>
+                <span className="font-sans text-[10px] tracking-[0.2em] uppercase text-gold block mb-2 font-semibold">
+                  Office
+                </span>
+                <address className="font-serif text-lg md:text-xl text-white-custom not-italic leading-snug">
+                  7080 Hollywood Blvd., 7th Floor,<br />
+                  Los Angeles, CA 90028
+                </address>
+              </div>
             </div>
           </div>
 
