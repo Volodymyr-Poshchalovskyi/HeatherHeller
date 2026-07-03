@@ -133,7 +133,7 @@ export default function ExperienceLabPage() {
           <motion.div variants={itemVariants} className="relative aspect-[16/9] w-full border border-gold/15 overflow-hidden bg-secondary">
             <img 
               src="/images/luxury_experience.jpg" 
-              alt="Experience Lab Activation" 
+              alt="Luxury brand wellness sanctuary activation by Experience Lab" 
               className="w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 hover:brightness-100 transition-all duration-1000"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80" />

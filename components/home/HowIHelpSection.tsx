@@ -31,9 +31,9 @@ const services = [
 ];
 
 const images = [
-  { src: "/images/luxury_f1.jpg", alt: "F1 VIP Hospitality" },
-  { src: "/images/luxury_villa.jpg", alt: "Strategy Session at Villa" },
-  { src: "/images/luxury_event.jpg", alt: "Luxury Brand Event" },
+  { src: "/images/luxury_f1.jpg", alt: "Luxury VIP hospitality suite setup at Formula 1 Grand Prix paddock" },
+  { src: "/images/luxury_villa.jpg", alt: "Executive brand strategy session held at a luxury private villa" },
+  { src: "/images/luxury_event.jpg", alt: "Elite luxury brand launch event styling and guest lounge" },
 ];
 
 export default function HowIHelpSection() {

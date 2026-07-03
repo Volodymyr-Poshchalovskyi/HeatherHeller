@@ -12,6 +12,7 @@ const projects = [
     description: "Sponsorship readiness and strategic introductions aligning global technology brands with elite F1 racing talent.",
     image: "/images/strategic_partnership.jpg",
     link: "/case-studies#consulting",
+    alt: "Vanguard Sponsorship Strategy case study - Formula 1 commercial branding alignment",
   },
   {
     title: "Aura Luxury Wellness Retreat",
@@ -19,6 +20,7 @@ const projects = [
     description: "An exclusive weekend at the intersection of wellness, sports, and luxury hospitality on the French Riviera.",
     image: "/images/luxury_experience.jpg",
     link: "/case-studies#experience-lab",
+    alt: "Aura Luxury Wellness Retreat case study - premium health activation on the French Riviera",
   },
   {
     title: "The Ascent: Executive Story",
@@ -26,6 +28,7 @@ const projects = [
     description: "A cinematic documentary and storytelling campaign detailing the journey of a world-renowned founder.",
     image: "/images/media_production.jpg",
     link: "/case-studies#sinners-saints",
+    alt: "The Ascent: Executive Story case study - cinematic media production and storytelling campaign",
   },
 ];
 
@@ -70,7 +73,7 @@ export default function FeaturedWorkSection() {
               <div className="relative aspect-[4/3] w-full overflow-hidden border-b border-gold/10">
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={project.alt || project.title}
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-background/25 group-hover:bg-transparent transition-colors duration-500" />

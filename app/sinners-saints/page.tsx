@@ -76,12 +76,14 @@ export default function SinnersSaintsPage() {
       category: "Video & Documentary",
       img: "/images/media_production.jpg",
       desc: "A 10-minute cinematic film tracking the legacy of a Silicon Valley VC partner, generating over 500k high-value views.",
+      alt: "The Ascent Documentary - executive video production and story",
     },
     {
       title: "Vesper Editorial Campaign",
       category: "Photography & Creative Direction",
       img: "/images/heather_portrait.jpg",
       desc: "Bespoke photography and style curation for a boutique private membership club launch in Mayfair, London.",
+      alt: "Vesper Editorial Campaign - fashion brand photography and creative direction",
     },
   ];
 
@@ -176,7 +178,7 @@ export default function SinnersSaintsPage() {
                   <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-gold/10 bg-background">
                     <img
                       src={item.img}
-                      alt={item.title}
+                      alt={item.alt || item.title}
                       className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-103"
                     />
                     <div className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-colors duration-500" />

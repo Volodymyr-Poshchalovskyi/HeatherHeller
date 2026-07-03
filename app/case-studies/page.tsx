@@ -13,6 +13,7 @@ const caseStudies = [
     solution: "Audited personal assets, curated their digital presence, packaged media metrics, and designed a custom sponsorship readiness framework.",
     result: "Secured a $1.2M title partnership with a leading technology brand and locked in three subsidiary deals within six months.",
     img: "/images/strategic_partnership.jpg",
+    alt: "Motorsport Commercial Acquisition - Formula 1 branding and sponsorship readiness",
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const caseStudies = [
     solution: "Designed and executed a wellness lounge, curating thought leadership speaker panels, private chef wellness dining, and recovery salons.",
     result: "Attracted 400+ attendees including 80+ C-suite leaders, generating direct investor conversations yielding $15M in follow-up funding.",
     img: "/images/luxury_experience.jpg",
+    alt: "Davos Sanctuary 2025 - luxury experience lab lounge and health activation",
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ const caseStudies = [
     solution: "Produced an editorial-grade cinematic short film detailing their career hurdles, philosophy, and future vision.",
     result: "Accumulated 500,000+ views across professional networks, resulting in 40+ inbound Limited Partner inquiries for the fund.",
     img: "/images/media_production.jpg",
+    alt: "The Ascent Documentary - cinematic brand production and founder storytelling",
   },
 ];
 
@@ -113,7 +116,7 @@ export default function CaseStudiesPage() {
                   <div className="lg:col-span-5 relative aspect-[16/10] lg:aspect-auto w-full min-h-[300px] overflow-hidden bg-background border-b lg:border-b-0 lg:border-r border-gold/10">
                     <img
                       src={cs.img}
-                      alt={cs.title}
+                      alt={cs.alt || cs.title}
                       className="w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 hover:brightness-100 transition-all duration-700"
                     />
                     <span className="absolute top-4 left-4 bg-background/90 text-gold font-sans text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 border border-gold/20 backdrop-blur-sm">

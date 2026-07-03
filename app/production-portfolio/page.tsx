@@ -13,6 +13,7 @@ const mediaItems = [
     client: "Vesper Private Club",
     img: "/images/heather_portrait.jpg",
     icon: <IoImagesOutline className="text-xl" />,
+    alt: "Vesper Private Club editorial brand portrait photography",
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ const mediaItems = [
     client: "Aurelia VC Fund",
     img: "/images/media_production.jpg",
     icon: <IoPlayOutline className="text-xl" />,
+    alt: "The Ascent cinematic video campaign production for Aurelia VC",
   },
   {
     id: 3,
@@ -29,6 +31,7 @@ const mediaItems = [
     client: "Horizon Superyachts",
     img: "/images/luxury_experience.jpg",
     icon: <IoEyeOutline className="text-xl" />,
+    alt: "Horizon Superyachts VIP experience setup by Experience Lab",
   },
   {
     id: 4,
@@ -37,6 +40,7 @@ const mediaItems = [
     client: "Vanguard Racing",
     img: "/images/strategic_partnership.jpg",
     icon: <IoImagesOutline className="text-xl" />,
+    alt: "Vanguard Racing F1 sponsorship branding materials",
   },
 ];
 
@@ -102,7 +106,7 @@ export default function ProductionPortfolioPage() {
                 >
                   <img
                     src={item.img}
-                    alt={item.title}
+                    alt={item.alt || item.title}
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-103 transition-all duration-1000 ease-out"
                   />
                   

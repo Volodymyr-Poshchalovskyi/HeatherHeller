@@ -66,7 +66,7 @@ export default function HeroSection() {
           <div className="relative w-full h-full">
             <img
               src="/images/heather_portrait.jpg"
-              alt="Heather Heller"
+              alt="Heather Heller Portrait - Luxury Brand Advisor & Consultant"
               className="w-full h-full object-cover"
             />
             {/* Smooth transition gradient overlay */}

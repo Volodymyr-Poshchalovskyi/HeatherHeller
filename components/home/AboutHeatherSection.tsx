@@ -17,7 +17,7 @@ export default function AboutHeatherSection() {
             <div className="relative aspect-[4/5] w-full max-w-md border border-gold/20 group overflow-hidden bg-background">
               <img
                 src="/images/heather_portrait.jpg"
-                alt="Heather Heller"
+                alt="Heather Heller, founder of the luxury brand consulting office, corporate portrait"
                 className="w-full h-full object-cover grayscale contrast-115 group-hover:grayscale-0 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-background/20 group-hover:bg-transparent transition-colors duration-500" />

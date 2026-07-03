@@ -85,7 +85,7 @@ export default function AboutPage() {
               <div className="relative aspect-[4/5] w-full max-w-md border border-gold/20 group overflow-hidden bg-secondary">
                 <img
                   src="/images/heather_portrait.jpg"
-                  alt="Heather Heller Portrait"
+                  alt="Heather Heller Portrait - Luxury Brand Advisor & Consultant"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-103"
                 />
                 <div className="absolute inset-0 bg-background/10 group-hover:bg-transparent transition-colors duration-500" />

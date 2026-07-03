@@ -31,8 +31,42 @@ const cinzel = Cinzel({
 
 
 export const metadata: Metadata = {
-  title: "Heather Heller | Luxury Consulting & Brand Strategy",
-  description: "Bespoke brand strategy, luxury consulting, and experience design for global elite brands.",
+  metadataBase: new URL("https://www.heatherheller.com"),
+  title: {
+    default: "Heather Heller | Luxury Consulting & Brand Strategy",
+    template: "%s | Heather Heller",
+  },
+  description: "Bespoke brand strategy, luxury consulting, and experience design for global elite brands, founders, and athletes.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Heather Heller | Luxury Consulting & Brand Strategy",
+    description: "Bespoke brand strategy, luxury consulting, and experience design for global elite brands, founders, and athletes.",
+    url: "https://www.heatherheller.com",
+    siteName: "Heather Heller",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/images/og-main.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Heather Heller | Luxury Consulting & Brand Strategy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Heather Heller | Luxury Consulting & Brand Strategy",
+    description: "Bespoke brand strategy, luxury consulting, and experience design for global elite brands, founders, and athletes.",
+    images: ["/images/og-main.jpg"],
+  },
 };
 
 export default function RootLayout({
